@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './components/Header';
+import NewHeader from './components/NewHeader';
+import SideBar from './components/SideBar';
 import Routes from './routes/Routes';
 import Login from './components/Login';
 import { useSelector } from 'react-redux';
@@ -15,7 +16,8 @@ function App() {
                     <BrowserRouter >
                         <Route render={props => (
                             <div>
-                                <Header {...props} />
+                                <SideBar />
+                                <NewHeader {...props} />
                                 <div className="container">
                                     <div className="main">
                                         <Routes />

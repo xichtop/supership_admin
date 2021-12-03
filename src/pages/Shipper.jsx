@@ -211,7 +211,7 @@ const ShipperTable = () => {
                 fontWeight: 'bold',
             },
             headerStyle: {
-                width: '120px',
+                width: '150px',
             }
         }, 
         {
@@ -220,7 +220,7 @@ const ShipperTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Tên nhân viên...', }),
             headerStyle: {
-                width: '120px',
+                width: '170px',
             }
         }, 
         {
@@ -229,7 +229,7 @@ const ShipperTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Số điện thoại...', }),
             headerStyle: {
-                width: '120px',
+                width: '150px',
             }
         }, 
         {
@@ -238,7 +238,7 @@ const ShipperTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Địa chỉ...', }),
             headerStyle: {
-                width: '120px',
+                width: '300px',
             }
         }, 
         {
@@ -247,7 +247,7 @@ const ShipperTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Số tài khoản...', }),
             headerStyle: {
-                width: '120px',
+                width: '150px',
             }
         }, 
         {
@@ -256,14 +256,14 @@ const ShipperTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Số CCCD...', }),
             headerStyle: {
-                width: '100px',
+                width: '150px',
             }
         }, 
         {
             dataField: 'Status',
             text: 'Trạng thái',
             sort: true,
-            headerStyle: { width: '110px' },
+            headerStyle: { width: '150px' },
             formatter: cell => selectOptions[cell],
             filter: selectFilter({
                 options: selectOptions
@@ -274,7 +274,7 @@ const ShipperTable = () => {
             formatter: cellButton,
             sort: true,
             headerStyle: {
-                width: '60px',
+                width: '110px',
             },
         }
     ];
@@ -297,7 +297,7 @@ const ShipperTable = () => {
             const shipper = shippers.find(shipper => shipper.StaffId === row.StaffId);
             return (
                 <Card>
-                    <CardTitle tag="h5">Chi tiết cửa hàng</CardTitle>
+                    <CardTitle tag="h5">Chi tiết người giao hàng</CardTitle>
                     <CardBody>
                         <Table striped hover bordered responsive>
                             <tbody>
@@ -348,8 +348,8 @@ const ShipperTable = () => {
     return (
         <div >
             <div className="row">
-                <div className="col-sm-12 btn btn-info">
-                    Danh Sách cửa hàng
+                <div className="col-sm-12 title">
+                    Danh Sách Người Giao Hàng
                 </div>
             </div>
             <ToolkitProvider

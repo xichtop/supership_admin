@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import storeAPI from '../api/storeAPI';
-import { Table,  ButtonToggle,  Card, CardTitle, CardBody } from 'reactstrap';
+import { Table, ButtonToggle, Card, CardTitle, CardBody } from 'reactstrap';
 import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import { useHistory } from "react-router-dom";
@@ -142,7 +142,7 @@ const EditButton = (props) => {
             closeOnEscape: true,
             closeOnClickOutside: true,
         });
-        
+
     }
     return (
         <div>
@@ -155,7 +155,7 @@ const EditButton = (props) => {
                     <ButtonToggle color="danger" onClick={hanleLock}>Khóa</ButtonToggle>{' '}
                 </td>
             }
-            
+
         </div>
     );
 };
@@ -218,7 +218,7 @@ const StoreTable = () => {
             headerStyle: {
                 width: '120px',
             }
-        }, 
+        },
         {
             dataField: 'StoreName',
             text: 'Tên cửa hàng',
@@ -227,39 +227,12 @@ const StoreTable = () => {
             headerStyle: {
                 width: '120px',
             }
-        }, 
+        },
         {
             dataField: 'Phone',
             text: 'Số điện thoại',
             sort: true,
             filter: textFilter({ placeholder: 'Số điện thoại...', }),
-            headerStyle: {
-                width: '120px',
-            }
-        }, 
-        {
-            dataField: 'WardName',
-            text: 'Phường/Xã',
-            sort: true,
-            filter: textFilter({ placeholder: 'Phường/Xã...', }),
-            headerStyle: {
-                width: '120px',
-            }
-        },
-        {
-            dataField: 'DistrictName',
-            text: 'Quận/Huyện',
-            sort: true,
-            filter: textFilter({ placeholder: 'Quận/Huyện...', }),
-            headerStyle: {
-                width: '120px',
-            }
-        }, 
-        {
-            dataField: 'ProvinceName',
-            text: 'Tỉnh, TP',
-            sort: true,
-            filter: textFilter({ placeholder: 'Tỉnh, TP...', }),
             headerStyle: {
                 width: '120px',
             }
@@ -270,9 +243,36 @@ const StoreTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Địa chỉ chỉ tiết...', }),
             headerStyle: {
-                width: '120px',
+                width: '140px',
             }
-        }, 
+        },
+        {
+            dataField: 'WardName',
+            text: 'Phường/Xã',
+            sort: true,
+            filter: textFilter({ placeholder: 'Phường/Xã...', }),
+            headerStyle: {
+                width: '140px',
+            }
+        },
+        {
+            dataField: 'DistrictName',
+            text: 'Quận/Huyện',
+            sort: true,
+            filter: textFilter({ placeholder: 'Quận/Huyện...', }),
+            headerStyle: {
+                width: '140px',
+            }
+        },
+        {
+            dataField: 'ProvinceName',
+            text: 'Tỉnh, TP',
+            sort: true,
+            filter: textFilter({ placeholder: 'Tỉnh, TP...', }),
+            headerStyle: {
+                width: '140px',
+            }
+        },
         {
             dataField: 'AccountBank',
             text: 'Số tài khoản',
@@ -281,7 +281,7 @@ const StoreTable = () => {
             headerStyle: {
                 width: '120px',
             }
-        }, 
+        },
         {
             dataField: 'IdentityId',
             text: 'Số CCCD',
@@ -290,7 +290,7 @@ const StoreTable = () => {
             headerStyle: {
                 width: '100px',
             }
-        }, 
+        },
         {
             dataField: 'Status',
             text: 'Trạng thái',
@@ -306,7 +306,7 @@ const StoreTable = () => {
             formatter: cellButton,
             sort: true,
             headerStyle: {
-                width: '90px',
+                width: '82px',
             },
         }
     ];
@@ -380,8 +380,8 @@ const StoreTable = () => {
     return (
         <div >
             <div className="row">
-                <div className="col-sm-12 btn btn-info">
-                    Danh Sách cửa hàng
+                <div className="col-sm-12 title">
+                    Danh Sách Cửa Hàng
                 </div>
             </div>
             <ToolkitProvider

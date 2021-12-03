@@ -49,7 +49,7 @@ const DeliveryTable = () => {
                 fontWeight: 'bold',
             },
             headerStyle: {
-                width: '120px',
+                width: '80px',
             }
         },
         {
@@ -58,7 +58,7 @@ const DeliveryTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Mã cửa hàng...', }),
             headerStyle: {
-                width: '120px',
+                width: '80px',
             }
         },
         {
@@ -131,7 +131,7 @@ const DeliveryTable = () => {
             sort: true,
             filter: textFilter({ placeholder: 'Loại giao hàng...', }),
             headerStyle: {
-                width: '100px',
+                width: '108px',
             }
         },
         {
@@ -215,7 +215,7 @@ const DeliveryTable = () => {
     return (
         <div >
             <div className="row">
-                <div className="col-sm-12 btn btn-info">
+                <div className="col-sm-12 title">
                     Danh Sách Vận Đơn
                 </div>
             </div>
