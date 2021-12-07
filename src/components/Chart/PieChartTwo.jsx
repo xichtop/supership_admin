@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import categoryAPI from '../../api/categoryAPI';
+import React, { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from 'recharts';
-
-import Datetime from "react-datetime";
-import 'react-datetime/css/react-datetime.css';
-import { useSelector } from 'react-redux';
 
 const renderActiveShape = (props) => {
 
@@ -23,7 +18,7 @@ const renderActiveShape = (props) => {
   return (
     <g>
       <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-        {payload.Category}
+        {payload.Status}
       </text>
       <Sector
         cx={cx}
@@ -53,43 +48,13 @@ const renderActiveShape = (props) => {
   );
 };
 
-const COLORS = ['#00C49F', '#FFBB28', '#FF8042','#FF0000', '#A73489', '#865439'];
+const COLORS = ['#00C49F', '#FFBB28', '#FF8042', '#FF0000', '#A73489', '#865439'];
 
 const PieChartTwo = (props) => {
 
-  const token = useSelector(state => state.employee.token);
+  const data = props.data;
 
-  const [year, setYear] = useState(2021);
-
-  const [month, setMonth] = useState(9);
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      var orders = [];
-      try {
-        orders = await categoryAPI.getStatisticByMonthAndYear(8, 2021, token);
-      } catch (error) {
-        console.log("Failed to fetch options: ", error);
-      }
-      setData(orders);
-    }
-    fetchOrders();
-  }, [])
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      var orders = [];
-      try {
-        orders = await categoryAPI.getStatisticByMonthAndYear(month, year, token);
-      } catch (error) {
-        console.log("Failed to fetch options: ", error);
-      }
-      setData(orders);
-    }
-    fetchOrders();
-  }, [month, year])
+  console.log(data);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -98,35 +63,28 @@ const PieChartTwo = (props) => {
   };
 
   return (
-    <div className="chart__row__col__item">
-      <div className="chart__row__col__item__picker--pie">
-        <span>Vui lòng chọn tháng / năm: </span>
-        <Datetime dateFormat="YYYY-MM" initialValue={'2021-09'} timeFormat="" onChange={(date) => {
-          setYear(date.year());
-          setMonth(date.month() + 1);
-        }} />
-      </div>
-      <ResponsiveContainer width="100%" height="85%">
-          <PieChart width={400} height={400}>
-            <Pie
-              activeIndex={activeIndex}
-              activeShape={renderActiveShape}
-              data={data}
-              cx="50%"
-              cy="50%"
-              innerRadius={40}
-              outerRadius={60}
-              fill="#8884d8"
-              dataKey="Quantity"
-              startAngle={180}
-              endAngle={0}
-              onMouseEnter={onPieEnter}
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
+    <div className="chart__body__item__chart">
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={400} >
+          <Pie
+            activeIndex={activeIndex}
+            activeShape={renderActiveShape}
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={50}
+            outerRadius={70}
+            fill="#8884d8"
+            dataKey="Quantity"
+            startAngle={180}
+            endAngle={0}
+            onMouseEnter={onPieEnter}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );

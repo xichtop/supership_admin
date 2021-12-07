@@ -1,10 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../slice/staffSlice';
 
 const NewHeader = () => {
 
     const dispatch = useDispatch();
+
+    const { pathname } = useLocation();
+
+    const [slogan, setSlogan] = useState('Thống Kê')
+
+    useEffect(() => {
+        if (pathname === '/') {
+            setSlogan('Thống Kê')
+        } else if (pathname === '/store') {
+            setSlogan('Cửa Hàng')
+        } 
+        else if (pathname === '/store') {
+            setSlogan('Cửa Hàng')
+        } 
+        else if (pathname === '/store/money') {
+            setSlogan('Tiền Thu Hộ')
+        } 
+        else if (pathname === '/order') {
+            setSlogan('Đơn Giao')
+        } 
+        else if (pathname === '/shipper/money') {
+            setSlogan('Phí Giao Hàng')
+        } 
+        else if (pathname === '/shipper') {
+            setSlogan('Người Giao Hàng')
+        } 
+    }, [pathname])
 
     const staff = useSelector(state => state.staff.staff);
 
@@ -16,7 +44,7 @@ const NewHeader = () => {
     return (
         <div className="header" >
             <div className="header__slogan" >
-                    <span className="header__slogan__span">Giao hàng nhanh - Giành chiến thắng</span>
+                    <span className="header__slogan__span">{slogan}</span>
                 </div>
             <div className="header__menu">
                 <div className="header__menu__left" >
