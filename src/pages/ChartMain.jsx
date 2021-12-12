@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import numberWithCommas from '../utils/numberWithCommas';
 import Datetime from "react-datetime";
 import 'react-datetime/css/react-datetime.css';
-import { format, addDays } from 'date-fns'
+import { addDays } from 'date-fns'
 import adminAPI from '../api/adminAPI'
 import PieChartTwo from '../components/Chart/PieChartTwo'
 import LineChart from '../components/Chart/LineChart'

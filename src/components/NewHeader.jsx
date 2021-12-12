@@ -16,10 +16,7 @@ const NewHeader = () => {
             setSlogan('Thống Kê')
         } else if (pathname === '/store') {
             setSlogan('Cửa Hàng')
-        } 
-        else if (pathname === '/store') {
-            setSlogan('Cửa Hàng')
-        } 
+        }
         else if (pathname === '/store/money') {
             setSlogan('Tiền Thu Hộ')
         } 
