@@ -31,7 +31,7 @@ const Chart = () => {
         ]
     })
 
-    const [firstDate, setFirstDate] = useState(addDays(new Date(), -29));
+    const [firstDate, setFirstDate] = useState(addDays(new Date(), -30));
 
     const [lastDate, setLastDate] = useState(addDays(new Date(), 1));
 

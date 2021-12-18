@@ -37,6 +37,8 @@ const DeliveryTable = () => {
         Delivering: 'Đang giao hàng',
         Delivered: 'Đã giao hàng',
         Canceled: 'Đã hủy',
+        Returning: 'Đang trả hàng',
+        Returned: 'Đã trả hàng'
     };
 
     const columns = [
