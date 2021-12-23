@@ -1,0 +1,120 @@
+.config {
+
+    &__title {
+        @include flex(center, center);
+        color: #112d4e;
+        font-size: 2rem;
+        padding-top: 10px;
+    }
+
+    &__body {
+
+        @include flex(center, center);
+        flex-direction: row; 
+        margin-left: 70px;
+
+        &__item {
+           
+            width: 630px;
+            height: 270px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+
+            &__title {
+                @include flex(center, center);
+                align-self: center;
+                padding-top: 10px;
+                color: green;
+            }
+
+            &__list {
+
+                @include flex(center, center);
+                flex-direction: row;
+
+                &__item {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    padding: 0 20px 10px 20px; 
+
+                    &__label {
+
+                        color: #243b55;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+
+                    &__money {
+                        padding-top: 10px;
+                    }
+                }
+
+                &__date {
+                    @include flex(center, center);
+
+                    &__label {
+                        margin: 0;
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+.fee {
+
+    &__title {
+        @include flex(center, center);
+        color: #112d4e;
+        font-size: 2rem;
+        padding-top: 10px;
+        font-weight: bold;
+    }
+
+    &__body {
+
+        @include flex(center, center);
+        flex-direction: row; 
+        margin-left: 20px;
+
+        &__item {
+           
+            width: 630px;
+            height: 250px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+
+            &__title {
+                @include flex(center, center);
+                align-self: center;
+                padding-top: 10px;
+                color: #3F72AF;
+            }
+
+            &__list {
+
+                @include flex(center, center);
+                flex-direction: row;
+                padding-top: 30px;
+
+                &__item {
+                    @include flex(center, center);
+                    flex-direction: column;
+                    padding: 0 20px 10px 20px; 
+
+                    &__label {
+
+                        color: #243b55;
+                        font-size: 1.1rem;
+                        margin: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}

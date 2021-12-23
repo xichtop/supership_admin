@@ -29,6 +29,12 @@ const NewHeader = () => {
         else if (pathname === '/shipper') {
             setSlogan('Người Giao Hàng')
         } 
+        else if (pathname === '/ware') {
+            setSlogan('Quản Lý Kho')
+        }
+        else if (pathname === '/config') {
+            setSlogan('Cài Đặt')
+        }
     }, [pathname])
 
     const staff = useSelector(state => state.staff.staff);

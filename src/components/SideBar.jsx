@@ -1,7 +1,5 @@
-import React, { useRef } from 'react'
-import { Link, useLocation, useHistory } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../slice/staffSlice';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
     return (
@@ -94,22 +92,38 @@ const SideBar = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="side--bar__body__item">
+                <div className="side--bar__body__item">
                     <div className="side--bar__body__item__title">
-                        Dòng tiền
+                        Kho
                     </div>
                     <div className="side--bar__body__item__link">
                         <div className="side--bar__body__item__link__icon">
-                            <i class='bx bx-dollar-circle' ></i>
+                            <i class='bx bxs-building-house'></i>
                         </div>
-                        <Link to="/money">
+                        <Link to="/ware">
                             <p>Danh sách</p>
                         </Link>
                         <div className="side--bar__body__item__link__icon">
                             <i class='bx bx-chevron-right'></i>
                         </div>
                     </div>
-                </div> */}
+                </div>
+                <div className="side--bar__body__item">
+                    <div className="side--bar__body__item__title">
+                        Cài đặt
+                    </div>
+                    <div className="side--bar__body__item__link">
+                        <div className="side--bar__body__item__link__icon">
+                            <i class='bx bx-analyse'></i>
+                        </div>
+                        <Link to="/config">
+                            <p>Config</p>
+                        </Link>
+                        <div className="side--bar__body__item__link__icon">
+                            <i class='bx bx-chevron-right'></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

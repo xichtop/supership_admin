@@ -31,6 +31,26 @@ const feeshipAPI = {
     });
   },
 
+  getConfig: (token) => {
+    const url = '/feeship/getconfig';
+    return axiosClient.get(url, {
+      headers: {
+        "Content-type": "Application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    });
+  },
+
+  updateConfig: (item, token) => {
+    const url = '/feeship/updateconfig';
+    return axiosClient.post(url, item, {
+      headers: {
+        "Content-type": "Application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    });
+  },
+
 }
 
 export default feeshipAPI;
